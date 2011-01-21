@@ -22,5 +22,8 @@ Shashinchou::Application.configure do
 
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
+
+  # Required by the 'devise' gem; set the host to 'localhost:3000'
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }  
 end
 
