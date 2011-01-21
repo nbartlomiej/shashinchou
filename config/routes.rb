@@ -1,4 +1,9 @@
 Shashinchou::Application.routes.draw do
+
+  # routes for the login system, managed by the 
+  # devise gem
+  devise_for :users
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
