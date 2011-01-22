@@ -3,6 +3,9 @@
 <p>
   <b>Name:</b>
   <%= @album.name %>
+  <% @album.photos.each do |photo| %>
+    <%= image_tag photo.image.url %>
+  <% end %>
 </p>
 
 

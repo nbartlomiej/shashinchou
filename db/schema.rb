@@ -22,10 +22,10 @@ ActiveRecord::Schema.define(:version => 20110122135922) do
     t.integer  "album_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "data_file_name"
-    t.string   "data_content_type"
-    t.integer  "data_file_size"
-    t.datetime "data_updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "users", :force => true do |t|
