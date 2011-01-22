@@ -1,0 +1,5 @@
+Sat Jan 22 19:34:55 CET 2011
+from ./test/unit/album_test.rb, 
+    30: fixture_file_upload("rails.png', 'image/png")
+caused error: RuntimeError, Message: <"/home/bartlomiej/temporary/20110121-shashinchou/shashinchou/test/fixtures/rails.png', 'image/png file does not exist">; code seemed fine, path was ok, image was present, and still the error was the same. And that line should have been:
+    30: fixture_file_upload("rails.png", "image/png") # correct...

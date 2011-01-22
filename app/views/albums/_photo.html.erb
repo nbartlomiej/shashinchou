@@ -1,6 +1,10 @@
-<% # copied from http://shiningthrough.co.uk/Dynamic-multiple-image-uploads-with-Ruby-on-Rails -%>
+<% # from http://shiningthrough.co.uk/Dynamic-multiple-image-uploads-with-Ruby-on-Rails -%>
 <fieldset>
-  <% if !f.object.new_record? %>
+  <% # if the object isn't new i.e.,
+     # it exists in the database,
+     # we'll just show it.
+     # from: http://shiningthrough.co.uk/Dynamic-multiple-image-uploads-with-Ruby-on-Rails
+    if !f.object.new_record? %>
     <%= image_tag f.object.image.url %>
   <% end %>
 
