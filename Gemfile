@@ -4,6 +4,7 @@ gem 'rails', '3.0.3'
 
 gem 'pg' # required for PostgreSQL db
 gem 'devise' # Devise, the authentication gem
+gem 'paperclip' # paperclip, for handling the attachments
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
