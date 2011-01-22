@@ -4,7 +4,7 @@
   <b>Name:</b>
   <%= @album.name %>
   <% @album.photos.each do |photo| %>
-    <%= image_tag photo.image.url %>
+    <%= image_tag photo.image(:thumbnail) %>
   <% end %>
 </p>
 
