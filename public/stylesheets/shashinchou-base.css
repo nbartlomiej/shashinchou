@@ -45,6 +45,11 @@ p {
 .albums .album-horizontal:nth-child(2n) {
 }
 
+/* buttons at the bottom of form partials */
+.actions {
+  margin: 20px 0;
+}
+
 /* palette #2
  * F4EAD5
  * C6E5D9

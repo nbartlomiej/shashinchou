@@ -15,8 +15,9 @@
     </h3>
     <div>
       <% album.photos[0...3].each do |photo| %>
-        <%= image_tag photo.image(:thumbnail) %>
+        <%= link_to( image_tag(photo.image(:thumbnail)), album) %>
       <% end %>
+      <%= ". . ." if album.photos.count > 3 %>
     </div>
   </div>
 <% end %>
