@@ -11,14 +11,22 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
+  <div class='span-24 album-horizontal'>
+    <div class="field">
+      <%= f.label :name %><br />
+      <%= f.text_field :name %>
+    </div>
+    <div>
+      <% @album.photos.each do |photo| %>
+        <%= image_tag photo.image(:thumbnail) %>
+      <% end %>
+    </div>
 
-  <%= add_photo(f) %>
+
+    <%= add_photo(f) %>
 
   <div class="actions">
     <%= f.submit %>
+  </div>
   </div>
 <% end %>

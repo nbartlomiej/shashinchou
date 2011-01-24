@@ -1,6 +1,7 @@
 Shashinchou::Application.routes.draw do
 
   resources :albums
+  resources :photos
 
   # routes for the login system, managed by the 
   # devise gem

@@ -35,6 +35,15 @@ p {
   color: black;
 }
 
+.album-horizontal {
+
+  border-top: 1px dashed #ccc;
+  margin: 10px 0;
+  padding: 10px 0;
+}
+
+.albums .album-horizontal:nth-child(2n) {
+}
 
 /* palette #2
  * F4EAD5

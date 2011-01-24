@@ -1,13 +1,16 @@
-<p id="notice"><%= notice %></p>
+<div class='span-24 @album-horizontal'>
+  <h3>
+    <%= link_to @album.name, @album %>
+    <% if @album.user == current_user -%>
+      ( <%= link_to 'Edit', edit_album_path(@album) %> ,
+      <%= link_to 'Destroy', @album, :confirm => 'Are you sure?', :method => :delete %> )
+    <% end -%>
+  </h3>
+  <div>
+    <% @album.photos.each do |photo| %>
+      <%= link_to image_tag(photo.image(:thumbnail)), photo_path(photo) %>
+    <% end %>
+  </div>
+</div>
 
-<p>
-  <b>Name:</b>
-  <%= @album.name %>
-  <% @album.photos.each do |photo| %>
-    <%= image_tag photo.image(:thumbnail) %>
-  <% end %>
-</p>
-
-
-<%= link_to 'Edit', edit_album_path(@album) %> |
 <%= link_to 'Back', albums_path %>

@@ -5,4 +5,5 @@ class Album < ActiveRecord::Base
   accepts_nested_attributes_for :photos, :allow_destroy => true
 
   validates :user_id, :presence => true
+  validates :name, :length => {:within => 3..160}
 end

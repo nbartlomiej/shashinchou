@@ -1,30 +1,24 @@
-<h2>Listing albums</h2>
+<h2>Showing all albums</h2>
+<div class='span-24 right'>
+  <%= link_to 'New Album', new_album_path %>
+</div>
 
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
+<div class='span-24 albums'>
 <% @albums.each do |album| %>
-  <div class='span-6'>
-    <%= link_to album.name, album %>
+  <div class='span-24 album-horizontal'>
+    <h3>
+      <%= link_to album.name, album %>
+      <% if album.user == current_user -%>
+        ( <%= link_to 'Edit', edit_album_path(album) %> ,
+        <%= link_to 'Destroy', album, :confirm => 'Are you sure?', :method => :delete %> )
+      <% end -%>
+    </h3>
+    <div>
+      <% album.photos[0...3].each do |photo| %>
+        <%= image_tag photo.image(:thumbnail) %>
+      <% end %>
+    </div>
   </div>
-  <div class='span-4'>
-    <%= link_to 'Edit', edit_album_path(album) %>
-  </div>
-  <div class='span-4 append-10 last'>
-    <%= link_to 'Destroy', album, :confirm => 'Are you sure?', :method => :delete %>
-  </div>
-  <tr>
-    <td></td>
-  </tr>
 <% end %>
-</table>
+</div>
 
-<br />
-
-<%= link_to 'New Album', new_album_path %>
