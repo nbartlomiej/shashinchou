@@ -16,16 +16,26 @@
 <div class='comments'>
   <h2>Comments: </h2>
   <% @photo.comments.each do |comment| -%>
-    <%= comment.content %>
+    <div class='comment-horizontal'>
+      <div class='headline'>
+        <strong><%= comment.user %>:</strong>
+      </div>
+      <div class='content'>
+        <%= comment.content %> <span class='quiet'>(<%= time_ago_in_words(comment.created_at) %> ago)</span>
+        <% if current_user && comment.user == current_user -%>
+          [<%= link_to 'delete', comment, :confirm => 'Are you sure?', :method => :delete %>]
+        <% end -%>
+      </div>
+    </div>
   <% end -%>
 </div>
+
 <div class='submit-comment'>
   <h2> Write a comment: </h2>
   <% form_for @comment do |f| -%>
     <% if @comment.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
-
         <ul>
           <% @comment.errors.full_messages.each do |msg| %>
             <li><%= msg %></li>
@@ -33,6 +43,7 @@
         </ul>
       </div>
     <% end %>
+    <%= f.hidden_field :photo_id, :value => @photo.id %>
     <div class="field">
       <%= f.text_area :content %>
     </div>

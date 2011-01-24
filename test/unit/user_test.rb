@@ -39,5 +39,10 @@ class UserTest < ActiveSupport::TestCase
     assert User.new(:email => "valid@email_4.com", :password => "1"*24 ).save  # 24 chars is ok
   end
 
+  test "user's mail should be obfuscated" do
+    u = User.new(:email => "valid@email.com", :password => "first_password")
+    u.save
+    assert_not_equal u.to_s, u.email
+  end
 
 end
