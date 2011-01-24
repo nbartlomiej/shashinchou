@@ -1,4 +1,5 @@
 class PhotosController < ApplicationController
+  before_filter :authenticate_user!, :only => [:destroy]
   # GET /photos/1
   # GET /photos/1.xml
   def show
@@ -15,7 +16,7 @@ class PhotosController < ApplicationController
   def destroy
     @photo = Photo.find(params[:id])
     album = @photo.album
-    @photo.destroy
+    @photo.destroy if album.user == current_user
 
     respond_to do |format|
       format.html { redirect_to(album_path(album)) }

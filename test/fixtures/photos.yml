@@ -1,1 +1,4 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+photo_one:
+  image_file_name: image.png
+  album: one

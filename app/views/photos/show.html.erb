@@ -1,6 +1,6 @@
 <h2>
   <%= @photo.image_file_name %>
-  <% if @photo.album.user == current_user -%>
+  <% if current_user && @photo.album.user == current_user -%>
     ( <%= link_to 'Delete', @photo, :confirm => 'Are you sure?', :method => :delete %> )
   <% end -%>
 </h2>

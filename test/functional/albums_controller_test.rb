@@ -27,9 +27,9 @@ class AlbumsControllerTest < ActionController::TestCase
   test "should create album" do
     sign_in users(:bill)
     assert_difference('Album.count') do
-      post :create, :album => Album.new(
+      post :create, :album => {
         :name => 'Barcelona 2012'
-      )
+      }
     end
     assert_redirected_to album_path(assigns(:album))
   end
@@ -39,10 +39,10 @@ class AlbumsControllerTest < ActionController::TestCase
     # commented out - that's what we're testing
     # sign_in user
     assert_no_difference('Album.count') do
-      post :create, :album => Album.new(
+      post :create, :album => {
         :name => 'Barcelona 2012',
         :user => user
-      )
+      }
     end
   end
 
