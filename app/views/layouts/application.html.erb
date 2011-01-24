@@ -2,18 +2,19 @@
 <html>
 <head>
   <title>写真帳 [shashinchou]</title>
-  <link rel="stylesheet" href="stylesheets/scaffold.css" type="text/css" media="screen, projection">
-  <link rel="stylesheet" href="blueprint/screen.css" type="text/css" media="screen, projection">
-  <link rel="stylesheet" href="blueprint/print.css" type="text/css" media="print"> 
+  <link rel="stylesheet" href="/stylesheets/scaffold.css" type="text/css" media="screen, projection">
+  <link rel="stylesheet" href="/blueprint/screen.css" type="text/css" media="screen, projection">
+  <link rel="stylesheet" href="/blueprint/print.css" type="text/css" media="print"> 
   <!--[if lt IE 8]>
-    <link rel="stylesheet" href="blueprint/ie.css" type="text/css" media="screen, projection">
+    <link rel="stylesheet" href="/blueprint/ie.css" type="text/css" media="screen, projection">
   <![endif]-->
-  <link rel="stylesheet" href="stylesheets/shashinchou-base.css" type="text/css" media="screen, projection">
+  <link rel="stylesheet" href="/stylesheets/shashinchou-base.css" type="text/css" media="screen, projection">
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
 </head>
 <body>
   <div class="container">
+    <%#top bar-%>
     <div class="span-12">
       <%= link_to 'Shashinchou - home', root_path %>
     </div>  
@@ -26,11 +27,7 @@
         <%= link_to "Sign in", new_user_session_path %>  
       <% end -%>
     </div>  
-    <div class='span-24'>
-      <div class='tagline'>
-        <h1> Shashinchou - a photo album </h1>
-      </div>
-    </div>
+    <%#alerts, notifications-%>
     <div class="span-24">
       <% if notice -%>
         <p class="notice"><%= notice %></p>
@@ -39,10 +36,27 @@
         <p class="alert"><%= alert %></p>
       <% end -%> 
     </div>
-
+    <%#title/banner/tagline-%>
+    <div class='span-24'>
+      <div class='tagline'>
+        <h1> Shashinchou - a photo album </h1>
+      </div>
+    </div>
+    <%#content per se-%>
     <div class="span-24">
       <div class='yield'>
         <%= yield %>
+      </div>
+    </div>
+    <%#footer-%>
+    <div class="span-24">
+      <div class='footer stealth-links'>
+        <p>
+          Shashinchou is an application that has been created as a demonstration of coding skills. Tools and technologies used in the process include: Ruby on Rails 3, devise, paperclip, blueprint, vim, git, green tea*.
+        </p>
+        <p class='small'>
+          *) That's not a linux program or ruby gem; just green tea.
+        </p>
       </div>
     </div>
   </div>

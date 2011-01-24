@@ -24,6 +24,17 @@ p {
   text-align: justify;
 }
 
+.footer {
+  margin-top: 40px;
+  border-top: 1px dashed black;
+  padding: 10px;
+}
+
+.stealth-links a:link {
+  color: black;
+}
+
+
 /* palette #2
  * F4EAD5
  * C6E5D9
