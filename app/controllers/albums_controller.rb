@@ -1,4 +1,7 @@
 class AlbumsController < ApplicationController
+
+  before_filter :authenticate_user!, :except => [:index, :show]
+
   # GET /albums
   # GET /albums.xml
   def index
@@ -80,4 +83,5 @@ class AlbumsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
 end

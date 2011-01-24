@@ -1,26 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Shashinchou</title>
-  <%= stylesheet_link_tag :all %>
+  <title>写真帳 [shashinchou]</title>
+  <link rel="stylesheet" href="stylesheets/scaffold.css" type="text/css" media="screen, projection">
+  <link rel="stylesheet" href="blueprint/screen.css" type="text/css" media="screen, projection">
+  <link rel="stylesheet" href="blueprint/print.css" type="text/css" media="print"> 
+  <!--[if lt IE 8]>
+    <link rel="stylesheet" href="blueprint/ie.css" type="text/css" media="screen, projection">
+  <![endif]-->
+  <link rel="stylesheet" href="stylesheets/shashinchou-base.css" type="text/css" media="screen, projection">
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
 </head>
 <body>
-  <div id="user_nav">  
-    <% if user_signed_in? %>  
-      Signed in as <%= current_user.email %>. Not you?  
-      <%= link_to "Sign out", destroy_user_session_path %>  
-    <% else %>  
-      <%= link_to "Sign up", new_user_registration_path %> or  
-      <%= link_to "Sign in", new_user_session_path %>  
-    <% end %>  
-  </div>  
+  <div class="container">
+    <div class="span-12">
+      <%= link_to 'Shashinchou - home', root_path %>
+    </div>  
+    <div class="span-12 right last">
+      <% if user_signed_in? -%> 
+        Signed in as <%= current_user.email %>. Not you?  
+        <%= link_to "Sign out", destroy_user_session_path %>  
+      <% else -%>  
+        <%= link_to "Sign up", new_user_registration_path %> or  
+        <%= link_to "Sign in", new_user_session_path %>  
+      <% end -%>
+    </div>  
+    <div class='span-24'>
+      <div class='tagline'>
+        <h1> Shashinchou - a photo album </h1>
+      </div>
+    </div>
+    <div class="span-24">
+      <% if notice -%>
+        <p class="notice"><%= notice %></p>
+      <% end -%> 
+      <% if alert -%>
+        <p class="alert"><%= alert %></p>
+      <% end -%> 
+    </div>
 
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-
-  <%= yield %>
+    <div class="span-24">
+      <div class='yield'>
+        <%= yield %>
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>

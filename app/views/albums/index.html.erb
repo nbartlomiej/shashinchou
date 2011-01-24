@@ -1,4 +1,5 @@
-<h1>Listing albums</h1>
+<h2>Listing albums</h2>
+
 
 <table>
   <tr>
@@ -9,11 +10,17 @@
   </tr>
 
 <% @albums.each do |album| %>
+  <div class='span-6'>
+    <%= link_to album.name, album %>
+  </div>
+  <div class='span-4'>
+    <%= link_to 'Edit', edit_album_path(album) %>
+  </div>
+  <div class='span-4 append-10 last'>
+    <%= link_to 'Destroy', album, :confirm => 'Are you sure?', :method => :delete %>
+  </div>
   <tr>
-    <td><%= album.name %></td>
-    <td><%= link_to 'Show', album %></td>
-    <td><%= link_to 'Edit', edit_album_path(album) %></td>
-    <td><%= link_to 'Destroy', album, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td></td>
   </tr>
 <% end %>
 </table>

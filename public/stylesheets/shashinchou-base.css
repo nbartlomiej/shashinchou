@@ -1,0 +1,43 @@
+#top-bar {
+  margin: 10px 0 40px 0;
+}
+
+tbody tr:nth-child(2n) td, tbody tr.even td {
+  background: #fff;
+}
+
+.tagline {
+  margin: 40px 0;
+}
+
+.container {
+}
+
+.right {
+  text-align: right;
+}
+
+.yield {
+}
+
+p {
+  text-align: justify;
+}
+
+/* palette #2
+ * F4EAD5
+ * C6E5D9
+ * C6A49A
+ * D68189
+ * E94E77
+ * source: http://www.colourlovers.com/palette/867235/LoversInJapan
+ */
+
+/* palette #1
+ * FE4365
+ * FC9D9A
+ * F9CDAD
+ * C8C8A9
+ * 83AF9B
+ * source: http://www.colourlovers.com/palette/629637/(◕〝◕)?widths=0
+ */

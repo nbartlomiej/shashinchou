@@ -1,3 +1,10 @@
+/* we're keeping the scaffold's css file;
+ * or rather a part of it - classes that
+ * describe the flash / error messages.
+ * other things and esp. html attributes
+ * shall be commented out */
+
+/*
 body { background-color: #fff; color: #333; }
 
 body, p, ol, ul, td {
@@ -15,6 +22,8 @@ pre {
 a { color: #000; }
 a:visited { color: #666; }
 a:hover { color: #fff; background-color:#000; }
+
+*/
 
 div.field, div.actions {
   margin-bottom: 10px;
