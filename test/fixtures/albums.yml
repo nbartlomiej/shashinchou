@@ -2,6 +2,12 @@
 
 one:
   name: Weekend in Tanzania
+  user: andrew
 
 two:
   name: Easter on Easter Island
+  user: andrew
+
+three:
+  name: Holidays on the Moon
+  user: bill
