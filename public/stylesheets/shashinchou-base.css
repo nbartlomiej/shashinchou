@@ -17,6 +17,10 @@ tbody tr:nth-child(2n) td, tbody tr.even td {
   text-align: right;
 }
 
+.v-space {
+  margin: 10px 0;
+}
+
 .yield {
 }
 

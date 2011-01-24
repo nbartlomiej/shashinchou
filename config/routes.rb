@@ -1,5 +1,7 @@
 Shashinchou::Application.routes.draw do
 
+  resources :comments
+
   resources :albums
   resources :photos
 
