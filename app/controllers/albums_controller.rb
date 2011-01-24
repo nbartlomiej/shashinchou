@@ -63,7 +63,7 @@ class AlbumsController < ApplicationController
     @album = Album.find(params[:id])
 
     respond_to do |format|
-      if @album.update_attributes(params[:album])
+      if @album.user == current_user && @album.update_attributes(params[:album])
         format.html { redirect_to(@album, :notice => 'Album was successfully updated.') }
         format.xml  { head :ok }
       else
@@ -77,7 +77,7 @@ class AlbumsController < ApplicationController
   # DELETE /albums/1.xml
   def destroy
     @album = Album.find(params[:id])
-    @album.destroy
+    @album.destroy if @album.user == current_user
 
     respond_to do |format|
       format.html { redirect_to(albums_url) }
